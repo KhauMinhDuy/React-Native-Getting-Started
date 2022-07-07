@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Alert, StyleSheet, Text, TextInput, View } from "react-native";
+import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 const Contact = ({ navigation }) => {
   const [formName, setFormName] = useState("Enter Name");
   const [formEmail, setFOrmEmail] = useState("Enter Email");
   const [formPhoneNumber, setFormPhoneNumber] = useState("Enter Phone Number");
-  const [formMessage, setFormMessage] = useState("Enter Message");
+  const [formMessage, setFormMessage] = useState(
+    "Let us know whats on your mind"
+  );
 
   const onSubmit = () => {
     if (!formName || !formEmail || !formMessage) {
@@ -37,24 +39,46 @@ const Contact = ({ navigation }) => {
       <TextInput
         style={styles.txtinput}
         onChangeText={(phone) => setFormPhoneNumber(phone)}
-        value={phone}
+        value={formPhoneNumber}
         selectTextOnFocus={true}
+        keyboardType="numeric"
       />
       <Text style={styles.labels}>Message: *required</Text>
       <TextInput
         style={styles.multitxtinput}
         onChangeText={(message) => setFormMessage(message)}
-        value={message}
+        value={formMessage}
         multiline={true}
         numberOfLines={3}
         selectTextOnFocus={true}
       />
+      <Button title="Contact Us" color={"#708090"} onPress={onSubmit}></Button>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  form: {},
+  form: {
+    alignItems: "center",
+    flexDirection: "column",
+    padding: 18,
+  },
+  txtinput: {
+    borderWidth: 1,
+    fontFamily: "Ubuntu-Regular",
+    width: "80%",
+    paddingBottom: 15,
+  },
+  multitxtinput: {
+    borderWidth: 1,
+    fontFamily: "Ubuntu-Regular",
+    width: "90%",
+    height: 120,
+    marginBottom: 50,
+  },
+  labels: {
+    fontFamily: "Ubuntu-Regular",
+  },
 });
 
 export default Contact;
