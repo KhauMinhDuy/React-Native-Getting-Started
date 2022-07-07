@@ -13,6 +13,12 @@ const Menu = (props) => {
       >
         <Text style={styles.buttontext}>Event</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Contact")}
+        style={styles.button}
+      >
+        <Text style={styles.buttontext}>Contact Us</Text>
+      </TouchableOpacity>
     </View>
   );
 };

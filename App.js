@@ -7,6 +7,8 @@ import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import Home from "./Home";
 import Tickets from "./Tickets";
+import Contact from "./Contact";
+import TicketPurchase from "./TicketPurchase";
 
 const Stack = createStackNavigator();
 
@@ -42,6 +44,24 @@ export default function App() {
             options={{
               headerTitleAlign: "center",
               headerTitleStyle: { fontFamily: "Ubuntu-Regular" },
+            }}
+          />
+          <Stack.Screen
+            name="Contact"
+            component={Contact}
+            options={{
+              headerTitleAlign: "center",
+              headerTitleStyle: { fontFamily: "Ubuntu-Regular" },
+              headerTitle: "Contact Us",
+            }}
+          />
+          <Stack.Screen
+            name="Purchase"
+            component={TicketPurchase}
+            options={{
+              headerTitleAlign: "center",
+              headerTitleStyle: { fontFamily: "Ubuntu-Regular" },
+              headerTitle: "Purchase Tickets",
             }}
           />
         </Stack.Navigator>
