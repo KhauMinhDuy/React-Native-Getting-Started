@@ -9,6 +9,7 @@ import Home from "./Home";
 import Tickets from "./Tickets";
 import Contact from "./Contact";
 import TicketPurchase from "./TicketPurchase";
+import News from "./News";
 
 const Stack = createStackNavigator();
 
@@ -62,6 +63,15 @@ export default function App() {
               headerTitleAlign: "center",
               headerTitleStyle: { fontFamily: "Ubuntu-Regular" },
               headerTitle: "Purchase Tickets",
+            }}
+          />
+          <Stack.Screen
+            name="News"
+            component={News}
+            options={{
+              headerTitleAlign: "center",
+              headerTitleStyle: { fontFamily: "Ubuntu-Regular" },
+              headerTitle: "Latest News",
             }}
           />
         </Stack.Navigator>

@@ -19,6 +19,12 @@ const Menu = (props) => {
       >
         <Text style={styles.buttontext}>Contact Us</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("News")}
+        style={styles.button}
+      >
+        <Text style={styles.buttontext}>News</Text>
+      </TouchableOpacity>
     </View>
   );
 };
